@@ -13,11 +13,11 @@ public class BlockPistonMoving extends BlockContainer {
          return null;
       } else {
          float var5 = var4.func_145860_a(0.0F);
-         if(var4.isExtending()) {
-            var5 = 1.0F - var5;
-         }
+         // Kept adjusting the first parameter as this was done for extending before as well
+         var5 = 1.0F - var5;
 
-         return this.func_176424_a(worldIn, pos, var4.func_174927_b(), var5, var4.func_174930_e());
+      // Use actual push facing instead of facing instead of the if before (This way it for sure does the same for extending/retracting)
+         return this.func_176424_a(worldIn, pos, var4.func_174927_b(), var5, var4.getPushFacing());
       }
    }
 
